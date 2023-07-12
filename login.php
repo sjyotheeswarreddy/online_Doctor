@@ -7,7 +7,8 @@ if (isset($_POST['login'])) {
     $email = $_REQUEST['UserName'];
     
     $password = encrypt_decrypt('encrypt',$_REQUEST['Password']);
-
+    // echo $password;
+    // die();
     $get_data = mysqli_query($con, "select * from register where EmailAddress='".$email."'AND Password='".$password."' AND status = '1' ");
     if ($get_data->num_rows > 0) {
 
